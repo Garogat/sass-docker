@@ -1,6 +1,7 @@
-FROM ruby:2.2
+FROM node:alpine
 
-RUN gem install sass
+# Globally node-sass from NPM
+RUN npm install --unsafe-perm -g node-sass
 
-WORKDIR /tmp
-ENTRYPOINT ["sass"]
+WORKDIR /src
+ENTRYPOINT ["node-sass"]
